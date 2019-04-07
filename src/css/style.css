@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+/*Start Header*/
+.header{
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 15px -9px #6c6c6c;
+  z-index: 999;
+}
+.body{
+  padding: 57px 0 0 0;
+}
+.navbar{
+  padding: 10px 0;
+}
+.navbar-brand{
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-link{
+  font-size: 15px;
+  color: black;
+}
+button.navbar-toggler{
+  border: 1px solid #838383;
+  height: 35px;
+  width: 35px;
+  outline: 0;
+  padding: 6px 8px;
+  border-radius: 0;
+}
+button.navbar-toggler span{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #838383;
+  margin: 4px 0;
+}
+/*End Header*/
+
+/*Start All Post*/
+.postHeader{
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+.postHeader img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pageTitle{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transform: translate(0,-50%);
+}
+.postHeader h1{
+  text-align: center;  
+  color: white;
+  font-size: 40px;
+  text-transform: capitalize;
+}
+.postHeader span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000091;
+}
+.postItem{
+  margin: 30px 0 0 0;
+  box-shadow: 0 0 15px -7px #bfbfbf;
+  border-radius: 10px;
+  overflow: hidden;
+  height: calc(100% - 30px);
+}
+.postItem .img{
+  width: 100%;
+  height: 250px;
+}
+.postItem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.postItem h5{
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.postItem .content{
+  padding: 30px;
+}
+.postItem p{
+  font-size: 14px;
+  line-height: 23px;
+}
+.postItem a{
+  background: #22585e;
+  color: white;
+  display: inline-block;
+  padding: 7px 15px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.loadMoreBtn{
+  margin: 30px 0;
+  text-align: center;
+}
+.loadMoreBtn button{
+  background: #272727;
+  color: white !important;
+  font-size: 14px;
+  padding: 9px 20px;
+  border-radius: 0;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/*End All Post*/
+
+/*Start Search*/
+.sideBar{
+  margin: 30px 0 0 0;
+}
+.sideSearch {
+  margin: 0 0 30px;
+}
+.sideSearch form{
+  box-shadow: 3px 3px 14px -6px #cdcdcd;
+  padding: 15px 15px;
+}
+.sideSearch input{
+  border-radius: 0;
+  border: 1px solid #ddd !important;
+  box-shadow: none !important;
+  font-size: 14px;
+  padding: 10px 15px;
+  height: auto;
+}
+.sideLatest {
+
+}
+.sideLatest h3{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.sideBar .postItem{
+  height: auto;
+  margin: 15px 0 0;
+  position: relative;
+  padding: 15px 15px 15px 100px;
+}
+.sideBar .postItem .img{
+  width: 85px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sideBar .postItem img{
+
+}
+.sideBar .postItem h5{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+.sideBar .postItem .content{
+  padding: 0;
+}
+.sideBar .postItem p{
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.sideBar .postItem a{
+  color: black;
+  background: transparent;
+  padding: 0;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 13px;
+}
+/*End Search*/
+
+/*Start Single Post*/
+.postPage{
+
+}
+.postPage .content{
+  background: white;
+  padding: 70px;
+  margin: -50px 0 50px;
+  position: relative;
+  box-shadow: 0px 10px 15px -7px #cecece;
+  font-size: 15px;
+}
+.postComment{
+
+}
+.postComment h3{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.postComment > div{
+
+}
+.commentBlock{
+  position: relative;
+  padding: 15px 15px 15px 110px;
+  margin: 0 0 15px;
+  background: #f8f8f8;
+}
+.commentBlock .img{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+.commentBlock img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.commentBody{
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.commentBody h5{
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+.commentBody h6{
+  font-size: 14px;
+  font-weight: normal;
+  color: #a2a2a2;
+  margin: 0 0 10px;
+}
+.commentBody p{
+  font-size: 14px;
+  margin: 0;
+  line-height: 23px;
+}
+
+
+
+
+/*End Single Post*/
