@@ -13,14 +13,13 @@ class Posts extends React.Component {
             postLimit: 6,
             postLimitLoaded: true,
             filteredPosts: [],
-            searchValue: ""
+            searchValue: "",
+            users: [],
+            randomNum: Math.floor(Math.random() * 10) + 1
         }
     }
 
     loadMoreHandle = () => {
-        // this.setState((prevState) => ({
-        //     postLimit: prevState.postLimit + 6
-        // }))
         this.setState((prevState) => ({
             postLimitLoaded: prevState.postLimitLoaded = false
         }))
@@ -43,22 +42,37 @@ class Posts extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response => {
-                this.setState(() => ({ 
-                    posts: response.data, 
+        const self = this
+        function getPostData() {
+            return axios.get('https://jsonplaceholder.typicode.com/posts')
+                        .then(res => {
+                            return res.data
+                        })
+        }
+        function getUserData() {
+            return axios.get('https://jsonplaceholder.typicode.com/users')
+                        .then(res => {
+                            return res.data
+                        })
+        }
+        axios.all([getPostData(), getUserData()])
+            .then(axios.spread(function(posts,users) {
+                self.setState(() => ({ 
+                    posts: posts, 
                     isLoaded: true,
-                    filteredPosts: response.data
+                    filteredPosts: posts,
+                    users: users
                 }))
-            })
+            }))
     }
 
     render(){
 
         return (
             <div>
+
                 <div className="postHeader">
-                    <img src="http://banty.in/wp/wp-content/uploads/2019/04/8.jpg" alt="Blog Post"/>
+                    <img src={`http://banty.in/wp/wp-content/uploads/2019/04/${this.state.randomNum}.jpg`} alt="Blog Post"/>
                     <span></span>
                     <div className="pageTitle">
                         <div className="container">
@@ -66,6 +80,7 @@ class Posts extends React.Component {
                         </div>
                     </div>
                 </div>
+                
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8">
@@ -75,20 +90,38 @@ class Posts extends React.Component {
                                     <div className="row">
                                         {
                                             this.state.filteredPosts.slice(0,this.state.postLimit).map((post) => {
-                                                return <PostItem classValue="col-md-6" key={ post.id } id={ post.id } title={ post.title } body={ post.body } bodyLimit="200" />
+                                                const userData = this.state.users.find(user => {
+                                                    return user.id === post.userId
+                                                })
+                                                return <PostItem 
+                                                            classValue="col-md-6" 
+                                                            key={ post.id } 
+                                                            id={ post.id } 
+                                                            title={ post.title } 
+                                                            body={ post.body } 
+                                                            bodyLimit="200" 
+                                                            user={ userData }
+                                                        />
                                             })
                                         }
-                                    </div>
-                                    <div className="loadMoreBtn">
-                                        {
-                                            this.state.postLimitLoaded ? ( 
-                                                <button className="btn" onClick={() => this.loadMoreHandle() }>
-                                                Load More</button>
-                                            ) : ( <Spinner /> ) 
-                                        }
-                                    </div>
+                                    </div>                                    
+                                    {
+                                        this.state.filteredPosts.length > this.state.postLimit ? (
+                                            <div className="loadMoreBtn">
+                                                {
+                                                    this.state.postLimitLoaded ? ( 
+                                                        <button 
+                                                            className="btn" 
+                                                            onClick={() => this.loadMoreHandle() }>
+                                                            Load More
+                                                        </button>
+                                                    ) : ( <Spinner /> ) 
+                                                }
+                                            </div>
+                                        ) : ( <div></div> )
+                                    }
                                 </div>
-                            ) : ( <div className="text-center mt-5 mb-5"> <Spinner /> </div> )
+                            ) : ( <div className="text-center mt-5 mb-5"><Spinner /></div> )
                         }                        
                         </div>
 
@@ -105,7 +138,14 @@ class Posts extends React.Component {
                                     <div className="row">
                                         { 
                                             this.state.posts.slice(-3).map((post) => {
-                                                return <PostItem classValue="col-12" key={ post.id } id={ post.id } title={ post.title } body={ post.body } bodyLimit="70" />
+                                                return <PostItem 
+                                                            classValue="col-12" 
+                                                            key={ post.id } 
+                                                            id={ post.id } 
+                                                            title={ post.title } 
+                                                            body={ post.body } 
+                                                            bodyLimit="70"
+                                                        />
                                             })
                                         }
                                     </div>

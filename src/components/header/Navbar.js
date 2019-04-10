@@ -1,12 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import logo from '../../logo.gif'
+
 const Navbar = (props) => {
     return (
         <header className="header">
             <div className="container">
                 <nav className="navbar navbar-expand-lg">
-                    <Link to="/" className="navbar-brand">Blog-UI</Link>
+                    <Link to="/" className="navbar-brand">
+                        <img src={logo} alt="Logo" />
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
                         <span></span>
                         <span></span>
@@ -22,6 +26,9 @@ const Navbar = (props) => {
                             </li>
                             <li className="nav-item">
                                 <Link to="/posts" className="nav-link">Posts</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/users" className="nav-link">Users</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/contact" className="nav-link">Contact</Link>

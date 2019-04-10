@@ -7,6 +7,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+.spinner-border{
+  border-color: #ff7a7a;
+  border-right-color: transparent;
+}
 /*Start Header*/
 .header{
   background: #ffffff;
@@ -18,7 +22,7 @@ code {
   z-index: 999;
 }
 .body{
-  padding: 57px 0 0 0;
+  padding: 57px 0;
 }
 .navbar{
   padding: 10px 0;
@@ -26,13 +30,17 @@ code {
 .navbar-brand{
   padding: 0;
   margin: 0;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
+  height: 40px;
+}
+.navbar-brand img{
+  height: 100%;
 }
 .nav-link{
   font-size: 15px;
   color: black;
+}
+.nav-link:hover{
+  color: #ff7a7a;
 }
 button.navbar-toggler{
   border: 1px solid #838383;
@@ -50,6 +58,60 @@ button.navbar-toggler span{
   margin: 4px 0;
 }
 /*End Header*/
+
+/*Start Home*/
+#homeCarousel img{
+  width: 100%;
+  height: calc(100vh - 58px);
+  object-fit: cover;
+}
+#homeCarousel span.fa{
+  font-size: 30px;
+}
+.carousel-inner:after{
+  width: 100%;
+  height: 100%;
+  background: #0000005e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+}
+.homeSlider{
+  position: relative;
+}
+.homeContent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.homeContent h2{
+  color: white;
+  font-size: 35px;
+  margin: 0;
+}
+.homeContent p{
+  color: white;
+  font-size: 15px;
+  margin: 10px 0 15px;
+}
+.homeContent a{
+  border-radius: 20px;
+  background: #ff7a7a;
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+/*End Home*/
 
 /*Start All Post*/
 .postHeader{
@@ -116,8 +178,8 @@ button.navbar-toggler span{
   font-size: 14px;
   line-height: 23px;
 }
-.postItem a{
-  background: #22585e;
+.postItem a.more{
+  background: #ff7a7a;
   color: white;
   display: inline-block;
   padding: 7px 15px;
@@ -129,16 +191,26 @@ button.navbar-toggler span{
   text-align: center;
 }
 .loadMoreBtn button{
-  background: #272727;
-  color: white !important;
+  background: white;
+  color: #ff7a7a !important;
   font-size: 14px;
-  padding: 9px 20px;
+  padding: 6px 15px;
   border-radius: 0;
-  text-transform: uppercase;
-  border: 0;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 400;
   letter-spacing: 1px;
+  border: 1px solid #ff7a7a;
+  box-shadow: none !important;
+}
+.postAuthor{
+  margin: 15px 0;
+  font-size: 14px;
+  color: #838383;
+}
+.postAuthor a{
+  font-weight: 600;
+  color: #ff7a7a;
+  margin: 0 0 0 5px;
 }
 /*End All Post*/
 
@@ -161,8 +233,8 @@ button.navbar-toggler span{
   padding: 10px 15px;
   height: auto;
 }
-.sideLatest {
-
+.sideSearch input:focus{
+  border-color: #ff7a7a !important;
 }
 .sideLatest h3{
   font-size: 17px;
@@ -181,9 +253,6 @@ button.navbar-toggler span{
   left: 0;
   top: 0;
 }
-.sideBar .postItem img{
-
-}
 .sideBar .postItem h5{
   white-space: nowrap;
   overflow: hidden;
@@ -199,42 +268,44 @@ button.navbar-toggler span{
   line-height: 20px;
 }
 .sideBar .postItem a{
-  color: black;
+  color: #ff7a7a;
   background: transparent;
   padding: 0;
-  font-weight: bold;
-  text-decoration: underline;
+  font-weight: 600;
   font-size: 13px;
 }
 /*End Search*/
 
 /*Start Single Post*/
 .postPage{
-
-}
-.postPage .content{
   background: white;
   padding: 70px;
   margin: -50px 0 50px;
   position: relative;
   box-shadow: 0px 10px 15px -7px #cecece;
-  font-size: 15px;
 }
-.postComment{
-
+.postPage > h2{
+  font-size: 15px;
+  margin: 0 0 20px;
+}
+.postPage > h2 a{
+  color: #ff7a7a;
+  margin: 0 0 0 2px;
+}
+.postPage .content{
+  text-align: justify;
+  font-size: 15px;
+  line-height: 25px;
 }
 .postComment h3{
   font-size: 20px;
   margin-bottom: 20px;
 }
-.postComment > div{
-
-}
 .commentBlock{
   position: relative;
-  padding: 15px 15px 15px 110px;
+  padding: 15px 15px 15px 90px;
   margin: 0 0 15px;
-  background: #f8f8f8;
+  background: #fafafa;
 }
 .commentBlock .img{
   position: absolute;
@@ -242,14 +313,13 @@ button.navbar-toggler span{
   top: 15px;
   border-radius: 50%;
   overflow: hidden;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 .commentBlock img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
 }
 .commentBody{
   font-size: 16px;
@@ -265,14 +335,175 @@ button.navbar-toggler span{
   font-weight: normal;
   color: #a2a2a2;
   margin: 0 0 10px;
+  text-transform: lowercase;
 }
 .commentBody p{
+  font-size: 13px;
+  margin: 0;
+  line-height: 20px;
+}
+/*End Single Post*/
+
+/*Start Post Comment*/
+.commentForm input,
+.commentForm textarea{
+  width: 100%;
+  margin-bottom: 15px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 14px;
+  outline: 0;
+}
+.commentForm button{
+  border: 0;
+  background: #ff7a7a;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  outline: 0;
+}
+/*End Post Comment*/
+
+/*Start all users*/
+.userSearch{
+  margin: 30px 0;
+  text-align: right;
+}
+.userSearch form{
+  display: inline-block;
+  width: 300px;
+  box-shadow: 3px 3px 14px -6px #cdcdcd;
+  padding: 15px 15px;
+}
+.userSearch input{
+  border-radius: 0;
+  border: 1px solid #ddd !important;
+  box-shadow: none !important;
+  font-size: 14px;
+  padding: 10px 15px;
+  height: auto;
+}
+.userSearch input:focus{
+  border-color: #ff7a7a !important;
+}
+.allUsers{
+
+}
+.userItem{
+  height: auto;
+  margin: 0 0 30px;
+  position: relative;
+  padding: 15px 15px 15px 155px;
+  box-shadow: 0 0 15px -7px #bfbfbf;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.userItem .img{
+  width: 140px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.userItem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.userItem .content{
+
+}
+.userItem h3{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.userItem h4{
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+.userItem h5{
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: normal;
+}
+.userItem p{
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.userItem a.more{
+  color: #ff7a7a;
+  background: transparent;
+  padding: 0;
+  font-weight: 700;
+  font-size: 13px;
+}
+.userItem span.fa{
+  color: #5c5c5c;
+  width: 15px;
+}
+.userPage{
+  margin: 0;
+  position: relative;
+}
+.userPage .img{
+  margin: -220px auto 0;
+  width: 150px;
+  border: 10px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.userPage .img img{
+  width: 100%;
+}
+.userPage h1{
+  font-size: 30px;
+  margin: 15px 0 50px;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+.userPage h2{
+  font-size: 17px;
+  background: #fafafa;
+  padding: 15px 30px;
+  margin: 0;
+}
+.userPage .content{
+  margin: 0 0 30px;
+  box-shadow: 0 0 13px -5px #d9d9d9;
+  height: calc(100% - 30px);
+}
+.userPage .content > div{
+  padding: 15px 30px;
+}
+.userPage p{
   font-size: 14px;
   margin: 0;
-  line-height: 23px;
+  line-height: 26px;
 }
+.userPage span.fa{
+  color: #5c5c5c;
+  width: 20px;
+}
+.subTitle{
+  font-size: 25px;
+  margin: 20px 0 0;
+  text-align: center;
+}
+/*End all users*/
 
-
-
-
-/*End Single Post*/
+/*Start Footer*/
+footer{
+  background: #0b0b0b;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  font-size: 13px;
+  display: none;
+}
+footer p{
+  margin: 0;
+}
+/*End Footer*/

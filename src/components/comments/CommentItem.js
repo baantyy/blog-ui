@@ -1,15 +1,17 @@
 import React from 'react'
 
 const CommentItem = (props) => {
+    const { id, email, name, body } = props
+    const imgUrl = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 11}.jpg`
     return (
         <div className="commentBlock">
             <div className="img">
-                <img src="https://via.placeholder.com/75x75" alt={props.email}/>
+                <img src={ imgUrl } alt={ email }/>
             </div>
             <div className="commentBody">
-                <h5>{ props.name }</h5>
-                <h6>{ props.email }</h6>
-                <p>{ props.body }</p>
+                <h5>{ name }</h5>
+                <h6>{ email }</h6>
+                <p>{ body }</p>
             </div>
         </div>
     )
