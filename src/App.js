@@ -15,10 +15,11 @@ import Users from './components/users/Users'
 import UserShow from './components/users/UserShow'
 
 class App extends Component {
+
   render() {
     return (
 
-      <BrowserRouter>
+      <BrowserRouter >
         <div className="wrapper">
           <Navbar />
           <div className="body">

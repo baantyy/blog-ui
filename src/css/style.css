@@ -11,6 +11,16 @@ code {
   border-color: #ff7a7a;
   border-right-color: transparent;
 }
+.button{
+  background: #ff7a7a;
+  color: white !important;
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 14px;
+  text-decoration: none !important;
+}
+
+
 /*Start Header*/
 .header{
   background: #ffffff;
@@ -59,7 +69,7 @@ button.navbar-toggler span{
 }
 /*End Header*/
 
-/*Start Home*/
+/*Start HomeSlider*/
 #homeCarousel img{
   width: 100%;
   height: calc(100vh - 58px);
@@ -102,16 +112,29 @@ button.navbar-toggler span{
 }
 .homeContent a{
   border-radius: 20px;
-  background: #ff7a7a;
-  color: white;
-  display: inline-block;
-  padding: 10px 30px;
-  font-size: 14px;
-  text-decoration: none;
 }
+/*End HomeSlider*/
 
-
-/*End Home*/
+/*Start HomeAbout*/
+.homeAbout{
+  padding: 100px 0;
+}
+.home h2{
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.homeAbout p{
+  font-size: 14px;
+  text-align: justify;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+.homeAbout img{
+  width: 100%;
+}
+/*End HomeAbout*/
 
 /*Start All Post*/
 .postHeader{
@@ -179,12 +202,7 @@ button.navbar-toggler span{
   line-height: 23px;
 }
 .postItem a.more{
-  background: #ff7a7a;
-  color: white;
-  display: inline-block;
   padding: 7px 15px;
-  font-size: 14px;
-  text-decoration: none;
 }
 .loadMoreBtn{
   margin: 30px 0;
@@ -268,7 +286,7 @@ button.navbar-toggler span{
   line-height: 20px;
 }
 .sideBar .postItem a{
-  color: #ff7a7a;
+  color: #ff7a7a !important;
   background: transparent;
   padding: 0;
   font-weight: 600;
@@ -492,6 +510,20 @@ button.navbar-toggler span{
   margin: 20px 0 0;
   text-align: center;
 }
+.userPostItem{
+  padding: 0 15px;
+}
+.slick-next:before, .slick-prev:before {
+  font-size: 25px;
+  color: #ff7a7a;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #ff7a7a;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+}
 /*End all users*/
 
 /*Start Footer*/
@@ -507,3 +539,18 @@ footer p{
   margin: 0;
 }
 /*End Footer*/
+
+/*Start About Us*/
+.about{
+  
+}
+.about .content{
+  padding: 50px 0;
+}
+.about .content p{
+  font-size: 14px;
+  line-height: 25px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+/*End About Us*/

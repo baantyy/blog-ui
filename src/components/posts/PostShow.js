@@ -1,6 +1,7 @@
 import React from 'react' 
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Title } from '../header/Title'
 
 import CommentItem from '../comments/CommentItem' 
 import CommentForm from '../comments/CommentForm' 
@@ -47,6 +48,7 @@ class PostShow extends React.Component {
             <div>
                 { this.state.isLoaded ? (
                     <div>
+                        <Title title={ title } />
                         <div className="postHeader">
                             <img src={`${postImg}`} alt={title} />
                             <span></span>

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Title } from '../header/Title'
 
 import PostItem from './PostItem'
 import Spinner from '../commons/Spinner'
@@ -70,6 +71,7 @@ class Posts extends React.Component {
 
         return (
             <div>
+                <Title title="Posts" />
 
                 <div className="postHeader">
                     <img src={`http://banty.in/wp/wp-content/uploads/2019/04/${this.state.randomNum}.jpg`} alt="Blog Post"/>

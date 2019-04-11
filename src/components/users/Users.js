@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Title } from '../header/Title'
 
 import UserItem from './UserItem'
 import Spinner from '../commons/Spinner'
@@ -40,6 +41,7 @@ class Users extends React.Component {
 
         return (
             <div>
+                <Title title="Users" />
                 
                 <div className="container">
 

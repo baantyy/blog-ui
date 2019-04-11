@@ -1,5 +1,7 @@
 import React from 'react' 
 import axios from 'axios'
+import { Title } from '../header/Title'
+import Slider from 'react-slick'
 
 import PostItem from '../posts/PostItem'
 import Spinner from '../commons/Spinner'
@@ -37,10 +39,21 @@ class UserShow extends React.Component {
         const { name, username, email, address, phone, website, company } = this.state.user
         const bgImg = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 1}.jpg`
         const profilePic = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 11}.jpg`
+
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+        
         return(
             <div>
                 { this.state.isLoaded ? (
                     <div>
+                        
+                        <Title title={name} />
 
                         <div className="postHeader" style={{height: '300px'}}>
                             <img src={bgImg} alt="User Page"/>
@@ -91,11 +104,11 @@ class UserShow extends React.Component {
 
                             <h2 className="subTitle">Related Posts</h2>                         
 
-                            <div className="row">
+                            <Slider {...settings}>
                                 {
                                     this.state.posts.map((post) => {
                                         return <PostItem 
-                                                    classValue="col-md-4" 
+                                                    classValue="userPostItem" 
                                                     key={ post.id } 
                                                     id={ post.id } 
                                                     title={ post.title } 
@@ -105,7 +118,7 @@ class UserShow extends React.Component {
                                                 />
                                     })
                                 }
-                            </div>
+                            </Slider>
 
                         </div>
                     </div> 

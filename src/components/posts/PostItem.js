@@ -19,7 +19,7 @@ const PostItem = (props) => {
                         user ? (<div className="postAuthor">Posted by <Link to={`../users/${user.id}`}>{ user.name }</Link></div>) : ""
                     }
                     <p>{ newBody } </p>
-                    <Link className="more" to={ `/posts/${id}` } >Read More</Link>
+                    <Link className="button more" to={ `/posts/${id}` } >Read More</Link>
                 </div>
             </div>
         </div>
