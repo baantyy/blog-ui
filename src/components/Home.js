@@ -8,7 +8,7 @@ const Home = (props) => {
 
     return (
         <div className="home">
-            <Title title="Home" />
+            <Title title="Blog" />
             <HomeSlider />
             <HomeAbout />           
         </div>
