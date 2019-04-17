@@ -29,7 +29,7 @@ const HomeSlider = (props) => {
             <div className="homeContent">
                 <div className="container">
                     <h2>Welcome to My Blog Page</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                     <Link className="button" to="posts" >Know More</Link>
                 </div>
             </div>
