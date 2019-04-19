@@ -6,7 +6,7 @@ const About = (props) => {
         <div className="about">
             <Title title="About" />
             <div className="postHeader">
-                <img src={`http://banty.in/wp/wp-content/uploads/2019/04/21.jpg`} alt="About"/>
+                <img src={`http://banty.in/dct/img/blog/21.jpg`} alt="About"/>
                 <span></span>
                 <div className="pageTitle">
                     <div className="container">

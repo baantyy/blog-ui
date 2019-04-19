@@ -10,13 +10,13 @@ const HomeSlider = (props) => {
             <div id="homeCarousel" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="http://banty.in/wp/wp-content/uploads/2019/04/7.jpg" alt="1" />
+                        <img src="http://banty.in/dct/img/blog/7.jpg" alt="1" />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://banty.in/wp/wp-content/uploads/2019/04/1.jpg" alt="2" />
+                        <img src="http://banty.in/dct/img/blog/1.jpg" alt="2" />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://banty.in/wp/wp-content/uploads/2019/04/5.jpg" alt="3" />
+                        <img src="http://banty.in/dct/img/blog/5.jpg" alt="3" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">

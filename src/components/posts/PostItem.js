@@ -5,7 +5,7 @@ const PostItem = (props) => {
 
     const { id, title, body, classValue, bodyLimit, user } = props
     const newBody = body.length > bodyLimit ? body.substring(0, bodyLimit - 3) + "..." : body
-    const postImg = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 1}.jpg`
+    const postImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
 
     return (
         <div className={ classValue }>

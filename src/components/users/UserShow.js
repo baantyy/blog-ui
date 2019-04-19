@@ -37,8 +37,8 @@ class UserShow extends React.Component {
     render() {
         const id = this.props.match.params.id
         const { name, username, email, address, phone, website, company } = this.state.user
-        const bgImg = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 1}.jpg`
-        const profilePic = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 11}.jpg`
+        const bgImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
+        const profilePic = `http://banty.in/dct/img/blog/${(id % 10) + 11}.jpg`
 
         const settings = {
             dots: true,

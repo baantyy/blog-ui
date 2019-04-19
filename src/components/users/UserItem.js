@@ -6,7 +6,7 @@ const FontAwesome = require('react-fontawesome')
 const UserItem = (props) => {
 
     const { id, name, email, address, phone } = props.details
-    const profilePic = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 11}.jpg`
+    const profilePic = `http://banty.in/dct/img/blog/${(id % 10) + 11}.jpg`
 
     return (
         <div className="col-md-6">

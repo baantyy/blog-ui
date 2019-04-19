@@ -15,7 +15,7 @@ const HomeAbout = (props) => {
                     </div>
                     <div className="col-md-6">
                         <div className="img">
-                            <img src="http://banty.in/wp/wp-content/uploads/2019/04/21.jpg" alt="About Us" />
+                            <img src="http://banty.in/dct/img/blog/21.jpg" alt="About Us" />
                         </div>
                     </div>
                 </div>

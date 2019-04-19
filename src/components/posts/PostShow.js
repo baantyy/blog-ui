@@ -43,7 +43,7 @@ class PostShow extends React.Component {
     render() {
         const id = this.props.match.params.id
         const { title, body } = this.state.post
-        const postImg = `http://banty.in/wp/wp-content/uploads/2019/04/${(id % 10) + 1}.jpg`
+        const postImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
         return(
             <div>
                 { this.state.isLoaded ? (

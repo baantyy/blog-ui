@@ -74,7 +74,7 @@ class Posts extends React.Component {
                 <Title title="Posts" />
 
                 <div className="postHeader">
-                    <img src={`http://banty.in/wp/wp-content/uploads/2019/04/${this.state.randomNum}.jpg`} alt="Blog Post"/>
+                    <img src={`http://banty.in/dct/img/blog/${this.state.randomNum}.jpg`} alt="Blog Post"/>
                     <span></span>
                     <div className="pageTitle">
                         <div className="container">
