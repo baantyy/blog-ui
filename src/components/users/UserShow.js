@@ -5,6 +5,7 @@ import Slider from 'react-slick'
 
 import PostItem from '../posts/PostItem'
 import Spinner from '../commons/Spinner'
+import { images } from '../images'
 
 const FontAwesome = require('react-fontawesome')
 
@@ -37,8 +38,8 @@ class UserShow extends React.Component {
     render() {
         const id = this.props.match.params.id
         const { name, username, email, address, phone, website, company } = this.state.user
-        const bgImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
-        const profilePic = `http://banty.in/dct/img/blog/${(id % 10) + 11}.jpg`
+        const bgImg = images[id % 10].image
+        const profilePic = images[(id % 10) + 5].image
 
         const settings = {
             dots: true,

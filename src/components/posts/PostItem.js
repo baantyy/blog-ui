@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { images } from '../images'
 
 const PostItem = (props) => {
 
     const { id, title, body, classValue, bodyLimit, user } = props
     const newBody = body.length > bodyLimit ? body.substring(0, bodyLimit - 3) + "..." : body
-    const postImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
+    const postImg = images[id % 10].image
 
     return (
         <div className={ classValue }>

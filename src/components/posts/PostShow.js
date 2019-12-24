@@ -6,6 +6,7 @@ import { Title } from '../header/Title'
 import CommentItem from '../comments/CommentItem' 
 import CommentForm from '../comments/CommentForm' 
 import Spinner from '../commons/Spinner'
+import { images } from '../images'
 
 class PostShow extends React.Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class PostShow extends React.Component {
     render() {
         const id = this.props.match.params.id
         const { title, body } = this.state.post
-        const postImg = `http://banty.in/dct/img/blog/${(id % 10) + 1}.jpg`
+        const postImg = images[id % 10].image
         return(
             <div>
                 { this.state.isLoaded ? (

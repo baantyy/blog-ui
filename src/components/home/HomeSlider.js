@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { images } from '../images';
 
 const FontAwesome = require('react-fontawesome')
 
@@ -10,13 +11,13 @@ const HomeSlider = (props) => {
             <div id="homeCarousel" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="http://banty.in/dct/img/blog/7.jpg" alt="1" />
+                        <img src={images[0].image} alt="1" />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://banty.in/dct/img/blog/1.jpg" alt="2" />
+                        <img src={images[1].image} alt="2" />
                     </div>
                     <div className="carousel-item">
-                        <img src="http://banty.in/dct/img/blog/5.jpg" alt="3" />
+                        <img src={images[2].image} alt="3" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">

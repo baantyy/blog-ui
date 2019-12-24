@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { images } from '../images'
 
 const FontAwesome = require('react-fontawesome')
 
 const UserItem = (props) => {
 
     const { id, name, email, address, phone } = props.details
-    const profilePic = `http://banty.in/dct/img/blog/${(id % 10) + 11}.jpg`
+    const profilePic = images[id % 10].image
 
     return (
         <div className="col-md-6">

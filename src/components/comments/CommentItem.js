@@ -1,8 +1,9 @@
 import React from 'react'
+import { images } from '../images'
 
 const CommentItem = (props) => {
     const { id, email, name, body } = props
-    const imgUrl = `http://banty.in/dct/img/blog/${(id % 10) + 11}.jpg`
+    const imgUrl = images[id % 10] ? `${images[id % 10].image}` : ''
     return (
         <div className="commentBlock">
             <div className="img">

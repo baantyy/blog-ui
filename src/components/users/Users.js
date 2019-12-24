@@ -41,16 +41,13 @@ class Users extends React.Component {
 
         return (
             <div>
-                <Title title="Users" />
-                
+                <Title title="Users" />                
                 <div className="container">
-
                     <div className="userSearch">
                         <form>
                             <input type="text" className="form-control" placeholder="Search Here" value={this.state.searchValue} onChange={ this.handleSearch } />
                         </form>
                     </div>
-
                     <div className="allUsers">
                         { 
                             this.state.isLoaded ? (

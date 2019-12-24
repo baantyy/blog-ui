@@ -1,12 +1,13 @@
 import React from 'react'
 import { Title } from './header/Title'
+import { images } from '../components/images'
 
 const About = (props) => {
     return (
         <div className="about">
             <Title title="About" />
             <div className="postHeader">
-                <img src={`http://banty.in/dct/img/blog/21.jpg`} alt="About"/>
+                <img src={images[6].image} alt="About"/>
                 <span></span>
                 <div className="pageTitle">
                     <div className="container">

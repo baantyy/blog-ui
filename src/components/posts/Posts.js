@@ -4,6 +4,7 @@ import { Title } from '../header/Title'
 
 import PostItem from './PostItem'
 import Spinner from '../commons/Spinner'
+import { images } from '../images'
 
 class Posts extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Posts extends React.Component {
             filteredPosts: [],
             searchValue: "",
             users: [],
-            randomNum: Math.floor(Math.random() * 10) + 1
+            randomNum: Math.floor(Math.random() * 10)
         }
     }
 
@@ -74,7 +75,7 @@ class Posts extends React.Component {
                 <Title title="Posts" />
 
                 <div className="postHeader">
-                    <img src={`http://banty.in/dct/img/blog/${this.state.randomNum}.jpg`} alt="Blog Post"/>
+                    <img src={images[this.state.randomNum % 10].image} alt="Blog Post"/>
                     <span></span>
                     <div className="pageTitle">
                         <div className="container">

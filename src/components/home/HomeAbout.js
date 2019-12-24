@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { images } from '../images'
 
 const HomeAbout = (props) => {
 
@@ -15,7 +16,7 @@ const HomeAbout = (props) => {
                     </div>
                     <div className="col-md-6">
                         <div className="img">
-                            <img src="http://banty.in/dct/img/blog/21.jpg" alt="About Us" />
+                            <img src={images[6].image} alt="About Us" />
                         </div>
                     </div>
                 </div>
